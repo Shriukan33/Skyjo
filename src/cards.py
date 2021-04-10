@@ -1,0 +1,1 @@
+# No proper card class made yet

@@ -11,20 +11,6 @@
 # Finishing player must be the one with the lowest score, or doubles his points.
 # Game finished when cumulated scores of previous rounds gets to 100.
 
-# TODO
-# Implement AI player.
-# Notes for AI implementation :
-# 1) Make the AI choose a single index number instead of coordinates by flattening its hand.
-# Loop to delete columns in 1D arrays (by grouping by 3)
-# for card in range(1, len(main), 3):
-#     print(main[card - 1:card + 2])
-#     ref = main[card - 1]
-#     if ref != self.hidden_skin:
-    #     if main[card] == ref and main[card + 1] == ref:
-    #         print("column of", ref)
-    #         test = np.delete(main, [range(card - 1, card + 2)])
-    #
-# print(test)
 
 from random import shuffle
 import numpy as np

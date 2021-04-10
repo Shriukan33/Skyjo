@@ -1,5 +1,6 @@
 import pygame
 import sys, os
+from pathlib import Path
 
 pygame.font.init()
 
@@ -12,10 +13,10 @@ DARK_GREEN = (80, 180, 80)
 # Screen parameters
 FPS = 60
 pygame.display.set_caption("Skyjo GUI")
-icon = pygame.image.load(os.path.join("Skyjo", "assets", "skyjo_icon.png"))
+icon = pygame.image.load(Path('./assets/skyjo_icon.png'))
 pygame.display.set_icon(icon)
 aspect_ratio = [16/9, 4/3]
-screen_width = 1280
+screen_width = 1280 
 screen_height = int(screen_width / aspect_ratio[1])
 WIN = pygame.display.set_mode(
     [screen_width, screen_height])  # Create the window
