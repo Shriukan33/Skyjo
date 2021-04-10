@@ -1,5 +1,6 @@
 import pygame
 from player import Player
+from cards import *
 from pathlib import Path
 
 
@@ -69,11 +70,6 @@ class Player_GUI(Player):
 
         self.surface = pygame.Surface(self.size)
         self.surface.fill(LIGHT_GREY) # Background color for players
-
-        def center_card_area(self):
-            width = (self.size[0] - 4 * CARD_SIZE[0] - 3 * self.h_gap)/2
-            height = (self.size[1] - 3 * CARD_SIZE[1] - 2 * self.v_gap)/2
-            return width, height
 
     def center_card_area(self):
         width = (self.size[0] - 4 * CARD_SIZE[0] - 3 * self.h_gap)/2
