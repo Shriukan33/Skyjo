@@ -1,15 +1,15 @@
-import pygame
 import sys
-from player import Player 
-from interface import *
+from player import Player, draw_screen
+from interface import FPS, WIN, DARK_GREEN, pygame
+
 
 # Game Loop
 def main():
-    Player_GUI(1, "Player 1").draw_player()
-    Player_GUI(2, "Player 2").draw_player()
-    Player_GUI(3, "Player 3").draw_player()
-    Player_GUI(4, "Player 4").draw_player()
-    clock = pygame.time.Clock() # used to cap framerate
+    Player(1, "Player 1")
+    Player(2, "Player 2")
+    Player(3, "Player 3")
+    Player(4, "Player 4")
+    clock = pygame.time.Clock()  # used to cap framerate
 
     while True:
         clock.tick(FPS)
@@ -18,8 +18,10 @@ def main():
                 print(Player.player_list[0].size)
                 pygame.quit()
                 sys.exit()
-            
-        draw_screen()
-         
+
+        draw_screen(WIN, DARK_GREEN)
+        pygame.display.update()
+
+
 if __name__ == '__main__':
     main()
