@@ -8,7 +8,7 @@ class Player:
 
     PADDING_RATE = 0.05
 
-    def __init__(self, player_num: int, name: str, screen_width: int, screen_height: int) -> None:
+    def __init__(self, player_num: int, name: str, screen_width: int, screen_height: int, deck) -> None:
         self.player_list.append(self)
         self.player_num = player_num
         self.name = name
@@ -47,7 +47,7 @@ class Player:
 
         self.hand = []              # This is being used for test now
         self.public_hand = []       # No use for now
-        self.build(Deck())
+        self.build(deck)
 
     def center_card_area(self, card_size) -> tuple[float, float]:
         width = (self.size[0] - 4 * card_size[0] - 3 * self.h_gap)/2
@@ -73,6 +73,6 @@ class Player:
 
         window.blit(self.surface, self.coordinate[self.player_num])
 
-    def set_color(self, color: tuple[int, int, int]) -> None:
+    def set_background(self, color: tuple[int, int, int]) -> None:
         "Set color of the player surface"
         self.surface.fill(color)
