@@ -1,6 +1,7 @@
 from card import Deck
 from modules.base import App
 from player import Player
+import modules.consts as consts
 import os
 if os.name == "nt":
     import ctypes
@@ -14,7 +15,7 @@ class Game(App):
 
     def build(self) -> None:
         self.deck = Deck()
-        self.window.fill((255, 255, 255))
+        self.window.fill(consts.WHITE)
         Player(1, "name", self.width, self.height, self.deck)
         Player(2, "name", self.width, self.height, self.deck)
         Player(3, "name", self.width, self.height, self.deck)
@@ -24,7 +25,7 @@ class Game(App):
 
     def loop(self) -> None:
         for player in Player.player_list:
-            player.set_background((240, 240, 240))
+            player.set_background(consts.LIGHT_GREY)
             player.draw(self.window)
 
 
